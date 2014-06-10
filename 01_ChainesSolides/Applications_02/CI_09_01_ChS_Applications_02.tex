@@ -1,0 +1,310 @@
+\documentclass[10pt]{article}
+\input{style/coursHeadings}
+\input{style/programHeadings}
+\input{style/macros_SII}
+\input{style/macros_Titres}
+\input{style/macros_Frames}
+ \usepackage{cancel}
+
+%Si le boolen xp est vrai : compilation pour xabi
+%Sinon compilation Damien
+\newboolean{xp}
+\setboolean{xp}{true}
+
+\newboolean{prof}
+\setboolean{prof}{false}
+
+\newboolean{td}
+\setboolean{td}{true}
+
+\usepackage[%
+    pdftitle={CI 09 :  - Ch 02 : PFS},
+    pdfauthor={Xavier Pessoles},
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=magenta]{hyperref}
+
+
+\def\discipline{Sciences Industrielles de l'Ingénieur}
+\def\xxtitre{\ifthenelse{\boolean{xp}}{
+CI 9 : Étude des mécanismes complexes}{}}
+
+\def\xxsoustitre{\ifthenelse{\boolean{xp}}{
+Chapitre 1 -- Introduction aux chaînes de solides -- Applications}{
+Partie  -- }}
+
+
+
+\def\xxauteur{\ifthenelse{\boolean{xp}}{
+%Xavier \textsc{Pessoles}
+}{}}
+
+\def\xxpied{\ifthenelse{\boolean{xp}}{
+CI 9 : Étude des mécanismes complexes\\
+Ch. 1 : Intro. aux chaînes de solides -- Applications}{
+\xxtitre}}
+
+\def\xxcathegorie{\ifthenelse{\boolean{xp}}{
+2013 -- 2014 \\
+Xavier \textsc{Pessoles}}{}}
+
+
+
+
+
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+
+\ifthenelse{\boolean{xp}}{\input{style/enteteXP}}{\input{style/enteteDI}}
+\begin{flushright}
+\textit{D'après ressources de S. Genouël, P. Beynet, JP Pupier.}
+\end{flushright}
+
+
+\subsection*{Centrale hydraulique}
+\setcounter{subparagraph}{0}
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[width=.95\textwidth]{images/fig01_1}
+\end{center}
+\end{minipage} 
+\hfill
+\begin{minipage}[c]{.52\linewidth}
+L'hydroélectricité est produite dans des usines hydrauliques couplées avec des barrages. La force motrice de l'eau est captée pour produire de l'électricité.
+
+Le barrage retient l'écoulement naturel de l'eau. En s'accumulant, celle-ci forme un lac de retenue. Il suffit alors d'ouvrir des vannes (lâcher d'eau) pour amorcer le cycle de production. Suivant l'installation, l'eau s'engouffre dans une conduite forcée ou dans une galerie creusée dans la roche et se dirige vers la centrale hydraulique.
+
+En France, EDF exploite 267 km de conduites forcées. A la sortie de la conduite, la force de l'eau entraîne la rotation de la turbine. Celle-ci entraîne à son tour l'alternateur (générateur) qui produit l'électricité. L'eau turbinée rejoint ensuite la rivière par un canal de fuite.
+
+\end{minipage}
+
+
+\subsubsection*{Schéma technologique en coupe de la partie inférieure d’un groupe turbo-alternateur}
+
+
+\begin{minipage}[c]{.47\linewidth}
+\begin{center}
+\includegraphics[width=.95\textwidth]{images/fig01_2}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{.47\linewidth}
+\begin{center}
+\includegraphics[width=.95\textwidth]{images/fig01_3}
+\end{center}
+\end{minipage} 
+
+
+\subsubsection*{Rôle et fonction des éléments d'un groupe turbo-alternateur}
+Le groupe est constitué des éléments suivants :
+\begin{itemize}
+\item une tuyère (0') de diamètre 2,5m qui canalise le flux d'eau amont;
+\item 27 pales directrices (6) qui orientent ce flux sur les aubes de la turbine (1) suivant différentes incidences;
+\item un ensemble de bielles (7) et (8) qui permettent l’orientation des 27 pales (6);
+\item une turbine Francis (1) de diamètre 3m qui transforme l'énergie hydraulique en énergie mécanique;
+\item un arbre (2) de diamètre 75cm qui transmet cette énergie mécanique de la turbine vers l'alternateur;
+\item un alternateur qui transforme l'énergie mécanique en énergie électrique;
+\item un régulateur de fréquence qui, à partir des données comme la fréquence de rotation en sortie du
+groupe, la position des pales directrices, et la consigne de fréquence, génère la consigne d'orientation
+des pales directrices.
+\end{itemize}
+
+Il s'agit d'analyser les liaisons entre le bâti (0) et l'arbre de transmission (2).
+L’objectif est de déterminer le modèle de la liaison équivalente entre ces deux ensembles.
+
+\subparagraph{}
+\textit{Compte tenu de la nature du contact, donner le nom des liaisons $L_{2/0}^{LA}$, $L_{2/0}^{LC}$ et $L_{2/0}^{LD}$.}
+
+\subparagraph{}
+\textit{La nature du contact des liaisons en A et C est supposée maintenant comme «cylindrique courte ». Donner le nouveau nom de la modélisation de chacune des liaisons suivantes : $L_{2/0}^{LA}$ et $L_{2/0}^{LC}$.}
+
+\subparagraph{}
+\textit{Dessiner le graphe de structure, puis le schéma d’architecture 3D de ces trois liaisons.}
+
+\subparagraph{}
+\textit{Donner la liaison équivalente entre le bâti 0 et l’arbre 2.}
+
+
+\subsection*{Galet tendeur de courroie}
+\setcounter{subparagraph}{0}
+
+\noindent\begin{minipage}[c]{.6\linewidth}
+Pour assurer une meilleure adhérence d’une courroie sur une
+poulie, il est nécessaire de tendre celle-ci. (exemple d’une
+courroie d’entraînement d’alternateur d’un moteur ci-contre).
+\begin{center}
+\includegraphics[width=.9\textwidth]{images/fig01_5}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+\includegraphics[width=.9\textwidth]{images/fig01_4}
+\end{center}
+\end{minipage}
+
+\vspace{.5cm}
+
+\noindent\begin{minipage}[c]{.5\linewidth}
+Sur le schéma d’architecture ci-contre, nous
+pouvons observer un système permettant de
+déplacer un galet (4) verticalement (suivant $\vect{z}$ )
+par rapport à un bâti (1), afin de tendre une
+courroie (qui est non représentée).
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[width=.9\textwidth]{images/fig01_6}
+\end{center}
+\end{minipage}
+
+\vspace{.5cm}
+
+On donne $\vect{QP}=b\vect{y}$.
+
+L’objectif est de déterminer le modèle de la liaison équivalente entre la pièce 2 et le bâti 1.
+
+\subparagraph{}
+\textit{Dessiner le graphe de structure.}
+
+\subparagraph{}
+\textit{Donner la forme du torseur cinématique de la liaison $L_{2/1}$.}
+
+\subparagraph{}
+\textit{Donner la forme du torseur cinématique de la liaison $L_{3/1}$.}
+
+\subparagraph{}
+\textit{Donner la forme du torseur cinématique de la liaison $L_{2/3}$.}
+
+\subparagraph{}
+\textit{Déterminer la forme du torseur cinématique, au point $Q$, de la liaison équivalente $L_{eq}$ entre 2 et 1. Préciser son nom.}
+
+\subparagraph{}
+\textit{En déduire le schéma cinématique minimal 3D en prenant la même orientation que le schéma d'architecture donné ci-dessus.}
+
+
+
+%\subsection*{Mât-réacteur de l'A320}
+%\setcounter{subparagraph}{0}
+%
+%\noindent\begin{minipage}[c]{.45\linewidth}
+%L'étude porte sur la solution
+%d'assemblage choisie entre le mât-réacteur
+%et l'aile de l'avion A320
+%(représenté figure ci-contre).
+%Les figures suivantes présentent les différentes
+%pièces de cet assemblage; ainsi que la disposition des liaisons
+%dans le plan (X, Z).
+%
+%\end{minipage} \hfill
+%\begin{minipage}[c]{.4\linewidth}
+%\begin{center}
+%\includegraphics[height=4cm]{images/fig02_2}
+%\end{center}
+%\end{minipage}
+%
+%\vspace{.5cm}
+%
+%\noindent\begin{minipage}[c]{.4\linewidth}
+%\begin{center}
+%\includegraphics[height=5cm]{images/fig02_3}
+%\end{center}
+%\end{minipage} \hfill
+%\begin{minipage}[c]{.4\linewidth}
+%\begin{center}
+%\includegraphics[height=5cm]{images/fig02_4}
+%\end{center}
+%\end{minipage}
+%
+%\vspace{.5cm}
+%
+%Le mât-réacteur (1) est suspendu à l'aile (0) grâce aux deux biellettes (4) et (5). Les articulations réalisées aux points $A$, $B$, $N$ et $M$ sont considérées comme des liaisons sphériques. On a $\vect{AM}=\vect{BN}=a\vect{z}$.
+%
+%Les mouvements du mât-réacteur (1) par rapport à l'aile (0) sont stoppés par la présence de deux triangles (2) et (3). Le triangle (2) est articulé sur (1) par deux liaisons "sphériques" de centres $E$ et $F$, et sur (0) par une liaison "sphérique" de centre $H$. On a : $\vect{EF}=e\vect{y}$ et $\vect{EH}=\dfrac{1}{2}e\vect{y}+h\vect{z}$.
+%
+%Le triangle (3) est articulé sur (1) par deux liaisons "sphériques" de centres $C$ et $D$, et sur (0) par une liaison "sphérique" de centre $J$. On a $\vect{CD}=c\vect{y}$ et $\vect{CJ}=\dfrac{1}{2}c\vect{y}-j\vect{x}$.
+%
+%\subparagraph{}
+%\textit{Tracer le graphe des liaisons du mécanisme d’assemblage.}
+%
+%\subparagraph{}
+%\textit{Tracer le schéma cinématique architectural 2D puis 3D du mécanisme d’assemblage.}
+%
+%\subparagraph{}
+%\textit{Donner (en le justifiant) la liaison équivalente entre (1) et (0) réalisée par la biellette
+%(4) puis par la biellette (5).}
+%
+%\subparagraph{}
+%\textit{Donner (en le justifiant) la liaison équivalente réalisée entre (1) et (0) par le triangle
+%(2) puis par le triangle (3).}
+%
+%\subparagraph{}
+%\textit{Tracer en perspective le schéma cinématique minimum de l’assemblage du mât (1)
+%sur l’aile (0) en utilisant les modèles des liaisons équivalentes déterminées aux
+%questions précédentes.}
+
+
+
+
+\subsection*{Machine de traction -- torsion}
+
+\setcounter{subparagraph}{0}
+
+
+Un dispositif anti-rotation présenté figure 1 permet de bloquer en rotation le corps 1 d'un vérin
+rotatif tout en permettant sa translation verticale. Il est constitué d'une plaque 12 solidaire du corps 1 du vérin rotatif et de deux porte galets a et b. Le porte galets a est présenté figure 2 et son plan d'ensemble est donné figure 3. Il est composé d'un support 14a en liaison pivot d'axe $(P_a,\vect{Z_0})$ avec le bâti 0 et de deux galets 11a et 13a.
+
+Attention : On considéra dans cette étude que la plaque 12 est en contact d'un seul côté (seulement avec le galet 11a au point Ia).
+
+
+\begin{minipage}[c]{.48\linewidth}
+\begin{center}
+\includegraphics[width=.9\textwidth]{images/traction1}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[c]{.48\linewidth}
+\begin{center}
+\includegraphics[width=.8\textwidth]{images/traction2}
+\end{center}
+\end{minipage}\hfill
+
+
+
+\begin{center}
+\includegraphics[width=.8\textwidth]{images/traction3}
+\end{center}
+
+\subparagraph{}
+\textit{Donner le nom de la liaison entre le galet 11a et le support 14a. Comment est-elle
+réalisée ?}
+
+\subparagraph{}
+\textit{Tracer le graphe de structure faisant intervenir seulement les pièces 0, 14a, 11a et 12.
+Réaliser le schéma cinématique (correspondant à ce graphe de structure) dans le plan
+$(P_a,\vect{X_0},\vect{Y_0})$ .}
+
+\subparagraph{}
+\textit{Donner (sans justification) le nom de la liaison équivalente entre 11a et le bâti 0.}
+
+\subparagraph{}
+\textit{Déterminer (en le justifiant) la liaison équivalente entre le plaque 12 et le bâti 0.}
+
+
+\subparagraph{}
+\textit{Tracer le graphe de structure entre le bâti 0 et le corps du vérin 1, en remplaçant les
+portes galets par leur liaison équivalente.}
+
+On pose $\vect{P_aP_b}=r \vect{Y_0}$.
+
+\subparagraph{}
+\textit{Déterminer alors (en le justifiant) la liaison équivalente entre le bâti 0 et le corps du
+vérin 1.}
+
+\subparagraph{}
+\textit{Justifier finalement l'appellation "dispositif anti-rotation".}
+
+
+\end{document}
+
